@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>だらだら在庫管理</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='./viewController.js'></script>
+    <script src="./event.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div id="firstV" class="view">
+        <h1>だらだら在庫管理（仮）</h1>
+    </div>
+    <div id="mainV" class="view">
+        <nav>
+            <a data-link="recordV">
+                記録
+            </a>
+            <a data-link="buyV">
+                買うもの
+            </a>
+            <a data-link="addV">
+                登録
+            </a>
+            <a data-link="setV">
+                設定
+            </a>
+        </nav>
+    </div>
+    <div id="setV" class="view" data-family="f">
+        <header>
+            <span onclick='viewController.change("mainV");'>← もどる</span>
+        </header>
+        <a class="setNavF" onclick="setTimeout(function(){viewController.change('qrV');document.getElementById('setV').setAttribute('data-family','t')},400)">
+            ファミリーを作る
+        </a>
+        <a class="setNavF" onclick="setTimeout(function(){alert('ここにカメラ処理入る予定');document.getElementById('setV').setAttribute('data-family','t')},400)">
+            ファミリーに入る
+        </a>
+        <a class="setNavT"  onclick="setTimeout(function(){document.getElementById('setV').setAttribute('data-family','f')},400)">
+            ファミリーを抜ける
+        </a>
+        <a class="setNavT" onclick="setTimeout(function(){viewController.change('qrV');},400)">
+            ファミリーQRを表示
+        </a>
+    </div>
+    <div id="qrV" class="view">
+            <header>
+                <span onclick='viewController.change("setV");'>← もどる</span>
+            </header>
+            <img src="./qr.png">
+            <p>
+                このQRコードをスマートフォンで読み取ってください。
+            </p>
+    </div>
+    <div id="addV" class="view">
+        <header>
+            <span onclick='viewController.change("mainV");'>← もどる</span>
+        </header>
+        <input placeholder="品名を入力してください" type="text">
+        <input id="addInput_stock" placeholder="置いている場所" type="text">
+        <input placeholder="今の在庫数" type="number">
+        <input id="addInput_stock" placeholder="最低ストック数" type="number">
+        <a onclick="setTimeout(function(){alert('登録処理');viewController.change('mainV');},400)">登録</a>
+    </div>
+    <div id="buyV" class="view">
+        <header>
+            <span onclick='viewController.change("mainV");'>← もどる</span>
+        </header>
+        <div class="scroll">
+            <div class="item" data-imp="0">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>0</span>個</div>
+            </div>
+            <div class="item" data-imp="0">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>0</span>個</div>
+            </div>
+            <div class="item" data-imp="1">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>10</span>個</div>
+            </div>
+            <div class="item" data-imp="1">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>1</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div id="recordV" class="view">
+        <header>
+            <span onclick='viewController.change("mainV");'>← もどる</span>
+        </header>
+        <div class="scroll">
+            <div class="item" data-imp="0">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>0</span>個</div>
+            </div>
+            <div class="item" data-imp="0">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>0</span>個</div>
+            </div>
+            <div class="item" data-imp="1">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>10</span>個</div>
+            </div>
+            <div class="item" data-imp="1">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>1</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2">
+                <div class="item_name" onclick="viewController.change('itemfuncV')">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div id="itemfuncV" class="view">
+        <header>
+            <span onclick='viewController.change("mainV");'>← もどる</span>
+        </header>
+            <a class="setNavF"onclick="alert()">
+                一つ使った
+            </a>
+            <a class="setNavF"onclick="">
+                まあまあ使った
+            </a>
+            <a class="setNavT" onclick="">
+                めっちゃ使った
+            </a>
+            <a class="setNavT"onclick="">
+                在庫がなくなった
+            </a>
+            <a class="setNavT"onclick="viewController.change('itemBuyV')">
+                買ってきた
+            </a>
+    </div>
+    <div id="itemBuyV" class="view">
+        <header>
+            <span onclick='viewController.change("mainV");'>← もどる</span>
+        </header>
+            <a class="setNavF"onclick="alert()">
+                一つ使った
+            </a>
+            <a class="setNavF"onclick="">
+                まあまあ使った
+            </a>
+            <a class="setNavT" onclick="">
+                めっちゃ使った
+            </a>
+            <a class="setNavT"onclick="">
+                在庫がなくなった
+            </a>
+            <a class="setNavT"onclick="">
+                買ってきた
+            </a>
+    </div>
+</body>
+</html>
+<!--
+    何が
+    どこに
+    どれだけ
+-->

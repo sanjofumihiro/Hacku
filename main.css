@@ -1,0 +1,269 @@
+*{
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow: hidden;
+}
+h1{
+    margin: 0;
+    width: 100vw;
+    padding-top: 40vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    color: #fa1;
+}
+#mainV nav{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 95vh;
+}
+#mainV nav a{
+    display: block;
+    margin: auto;
+    margin-top: 5vh;
+    height:18vh;
+    width: 18vh;
+    background: #fa1;
+    color: #fff;
+    border-radius: 9vh;
+    font-size: 3.5vh;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 18vh;
+    transition: 0.3s;
+}
+#mainV nav a:hover{
+    background: rgb(255, 208, 122);
+    transform: scale(1.1);
+}
+.view header{
+    width: 100vw;
+    box-shadow: 0 0 4px #223;
+    text-align: left;
+    font-weight: bold;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 20px;
+    padding:20px;;
+}
+#setV header{
+    margin-bottom: -10vh;
+}
+#setV[data-family="f"] .setNavT{
+    display: none;
+}
+#qrV img{
+    display: block;
+    margin: auto;
+    width: 80vw;
+    margin-top: 10vh;
+}
+#qrV p{
+    margin: auto;
+    margin-top: 5vh;
+    width: 80vw;
+}
+#addV input{
+    display: block;
+    margin: auto;
+    margin-top: 5vh;
+    font-size: 2vh;
+    width: 15em;;
+    max-width: 80vw;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px #fa1;
+    transition: 0.3s;
+}
+#addV input[type="number"]{
+    text-align: center;
+}
+#addV input:focus{
+    width: 18em;
+    max-width: 85vw;
+}
+#addV a,.cercle a{
+    display: block;
+    margin: auto;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 7.5vh;
+    font-size: 2vh;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 15vh;
+    background: #fff;
+    border:#fa1 solid 2px;
+    color: #fa1;
+    transition: 0.3s;
+}
+#addV a{
+    margin-top: 10vh;
+
+}
+.cercle a:first-child{
+    margin-top: 5vh;
+}
+.cercle a{
+    margin-top: 4vh;
+}
+#addV a:hover,.cercle a:hover{
+    transform: scale(1.2);
+    background: #fa1;
+    color:#fff; 
+}
+ #listV{
+    overflow-y: hidden !important;
+}
+#listV .scroll{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding-bottom: 60px;  
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+#listV .item{
+    display: flex;
+    margin: auto;
+    width: 80vw;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-radius: 0.3em;;
+    box-sizing: border-box;
+    padding: 0.8em;
+    transition: 0.3s;
+}
+#lostV .item:hover{
+    transform: scale(1.1);
+}
+#listV .item[data-imp="0"]{
+    background:#ef5285;
+    color: #113;
+}
+#listV .item[data-imp="1"]{
+    background:#feee7d;
+    color: #113;
+}
+#listV .item[data-imp="2"]{
+    background:#60c5ba;
+    color: #113;
+}
+#listV .item_name{
+    width: 70%;
+    font-weight: bold;
+}
+#listV .item_rot{
+    width: 30%;
+}
+#setV a{
+    background: #fff;
+    border:#fa1 solid 2px;
+    color: #fa1;;
+}
+#setV a:hover{
+    transform: scale(1.2);
+    background: #fa1;
+    color:#fff; 
+}
+#setV[data-family="t"] .setNavF{
+    display: none;
+}
+.txt{
+    display: block;
+    margin: auto;
+    margin-top: 20vh;
+    outline: none;
+    border: none;
+    border-bottom: 2px #ee9908 solid;
+    font-size: 140%;
+}
+strong{
+    display: block;
+    margin: auto;
+    margin-top: 10vh;
+    font-size: 160%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#indV{
+    overflow-y: hidden !important;
+}
+#indV .scroll{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding-bottom: 60px;  
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+#indV >div>div{
+    margin: auto;
+    width: 80vw;
+    margin-top: 10px;
+    border-radius: 0.3em 0.3em 0 0;;
+    transition: 0.3s;
+}
+#indV .item{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.8em;
+}
+#indV>div>div[data-imp="0"]{
+    background:#ef5285;
+    color: #113;
+}
+#indV>div>div[data-imp="1"]{
+    background:#feee7d;
+    color: #113;
+}
+#indV>div>div[data-imp="2"]{
+    background:#60c5ba;
+    color: #113;
+}
+#indV .item_name{
+    width: 70%;
+    font-weight: bold;
+}
+#indV .item_rot{
+    width: 30%;
+}
+#indV ul{
+    margin: 0;
+    padding: 0;
+    padding-top: 0.3em;
+    width: 100%;
+    background: #fff;
+}
+#indV li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+#indV li div:first-child{
+    width: 80%;
+    padding-left: 1em;
+    box-sizing: border-box;
+}
+#indV li div:last-child{
+    width: 20%;
+    text-align: center;
+}
+/*日々つけて置かなければなくなるという問題も解消

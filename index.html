@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>だらだらストッカー
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='./viewController.js'></script>
+    <script src="./event.js"></script>
+    <script src="./main.js"></script>
+</head>
+<script>
+let mode;
+let indexs;
+let volume;
+</script>
+<body>
+    <div id="firstV" class="view">
+        <h1>だらだらストッカー</h1>
+    </div>
+    <div id="mainV" class="view">
+        <nav>
+            <a data-link="listV" onclick="mode=0">
+                追加
+            </a>
+            <a data-link="listV" onclick="mode=1">
+                使用
+            </a>
+            <a data-link="indV">
+                在庫
+            </a>
+            <a data-link="setV">
+                設定
+            </a>
+        </nav>
+    </div>
+    <div id="addV" class="view">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <input placeholder="品名を入力してください" type="text">
+        <a onclick="setTimeout(function(){alert('登録処理');},400);" data-link="mainV">登録</a>
+    </div>
+    <div id="listV" class="view">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <div class="scroll">
+            <div class="item" data-imp="0" data-index="1" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}" >
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>0</span>個</div>
+            </div>
+            <div class="item" data-imp="0" data-index="2" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>0</span>個</div>
+            </div>
+            <div class="item" data-imp="1" data-index="3" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>10</span>個</div>
+            </div>
+            <div class="item" data-imp="1" data-index="4" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>1</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="5" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <div class="item" data-imp="2" data-index="6" onclick="indexs=this.getAttribute('data-index');if(mode==0){setTimeout(function(){viewController.change('buyV')},300)}else{setTimeout(function(){viewController.change('useV')},300)}">
+                <div class="item_name">アイテム名</div>
+                <div class="item_rot">残り<span>30</span>個</div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div id="useV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <nav>
+            <a data-link="locV" onclick="volume=1">
+                1つ使った
+            </a>
+            <a data-link="locV" onclick="volume=2">
+                まあまあ使った
+            </a>
+            <a data-link="locV" onclick="volume=3">
+                とても使った
+            </a>
+            <a data-link="locV" onclick="volume=4">
+                使い切った
+            </a>
+        </nav>
+    </div>
+    <div id="buyV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <nav>
+            <a data-link="locV" onclick="volume=1">
+                1つ買った
+            </a>
+            <a data-link="locV" onclick="volume=2">
+                まあまあ買った
+            </a>
+            <a data-link="locV" onclick="volume=3">
+                とても買った
+            </a>
+        </nav>
+    </div>
+    <div id="locV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <nav>
+            <a data-link="mainV" onclick="alert('記録処理')">
+                ロフト
+            </a>
+            <a data-link="mainV" onclick="alert('記録処理')">
+                冷蔵庫
+            </a>
+            <a data-link="mainV" onclick="alert('記録処理')">
+                クローゼット
+            </a>
+            <a data-link="mainV" onclick="alert('記録処理')">
+                押し入れ
+            </a>
+            <a data-link="mainV" onclick="alert('記録処理')">
+                リビング
+            </a>
+            <br>
+            <br>
+        </nav>
+    </div>
+    <div id="setV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <br>
+        <br>
+        <br>
+        <a data-link="">家族登録</a>
+        <a data-link="placeV">場所登録</a>
+        <a data-link="godsV">品名登録</a>
+    </div>
+    <div id="godsV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <input type="text" placeholder="品名" class="txt">
+        <a data-link="comGodV">登録</a>
+    </div>
+    <div id="comGodV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <strong>登録完了</strong>
+        <a data-link="godsV">OK</a>
+    </div>
+    <div id="placeV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <input type="text" placeholder="場所" class="txt">
+        <a data-link="complcV">登録</a>
+    </div>
+    <div id="complcV" class="view cercle">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <strong>登録完了</strong>
+        <a data-link="placeV">OK</a>
+    </div>
+    <div id="indV" class="view">
+        <header>
+            <span data-link="mainV">← もどる</span>
+        </header>
+        <div class="scroll">
+            <div data-imp="0" data-index="0">
+                <div class="item">
+                    <div class="item_name">アイテム名</div>
+                     <div class="item_rot">残り<span>0</span>個</div>
+                </div>
+                <ul>
+                        <li>
+                                <div>廊下</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ロフト</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ベランダ</div>
+                                <div>1個</div>
+                        </li>
+                </ul>
+            </div>
+            <div data-imp="1" data-index="0">
+                <div class="item">
+                    <div class="item_name">アイテム名</div>
+                     <div class="item_rot">残り<span>0</span>個</div>
+                </div>
+                <ul>
+                        <li>
+                                <div>廊下</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ロフト</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ベランダ</div>
+                                <div>1個</div>
+                        </li>
+                </ul>
+            </div>
+            <div data-imp="1" data-index="0">
+                <div class="item">
+                    <div class="item_name">アイテム名</div>
+                     <div class="item_rot">残り<span>0</span>個</div>
+                </div>
+                <ul>
+                        <li>
+                                <div>廊下</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ロフト</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ベランダ</div>
+                                <div>1個</div>
+                        </li>
+                </ul>
+            </div>
+            <div data-imp="1" data-index="0">
+                <div class="item">
+                    <div class="item_name">アイテム名</div>
+                     <div class="item_rot">残り<span>0</span>個</div>
+                </div>
+                <ul>
+                        <li>
+                                <div>廊下</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ロフト</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ベランダ</div>
+                                <div>1個</div>
+                        </li>
+                </ul>
+            </div>
+            <div data-imp="2" data-index="0">
+                <div class="item">
+                    <div class="item_name">アイテム名</div>
+                     <div class="item_rot">残り<span>0</span>個</div>
+                </div>
+                <ul>
+                        <li>
+                                <div>廊下</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ロフト</div>
+                                <div>1個</div>
+                        </li>
+                        <li>
+                                <div>ベランダ</div>
+                                <div>1個</div>
+                        </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+</html>
+<!--
+    何が
+    どこに
+    どれだけ
+
+
+
+    追加
+    使用
+    登録
+
+-->
